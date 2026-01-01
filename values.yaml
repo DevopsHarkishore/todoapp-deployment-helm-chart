@@ -22,6 +22,7 @@ addtask:
   port:
     number: 80
 
+# *******************************************************
 deletetask:
   replicas: 1
   image:
@@ -46,7 +47,7 @@ deletetask:
     path: "/"
   port:
     number: 80
-
+# **************************************************
 gettask:
   replicas: 2
   image:
@@ -70,7 +71,7 @@ gettask:
     path: "/"
   port:
     number: 80
-
+# ************************************
 todoui:
   replicas: 2 
   image:
