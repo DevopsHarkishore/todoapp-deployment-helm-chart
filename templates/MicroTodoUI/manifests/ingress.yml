@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-todo-ui-ingress
+spec:
+  ingressClassName: {{ .Values.todoui.ingressClassName }}
+  rules:
+  - host: {{ .Values.todoui.rules.host }}
+    http:
+      paths:
+      - pathType: {{ .Values.todoui.paths.pathType }} 
+        path: {{ .Values.todoui.paths.path }} 
+        backend:
+          service:
+            name: {{ .Release.Name }}-todo-ui
+            port: 
+              number: {{ .Values.todoui.port.number }}
