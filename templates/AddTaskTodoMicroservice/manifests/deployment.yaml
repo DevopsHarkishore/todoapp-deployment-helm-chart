@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: {{ .Release.Name }}-todo-add-tasks-api
-        image: {{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}
+        image: {{ .Values.addtask.image.acr_name }}/{{ .Values.addtask.image.image_name }}:{{ .Values.addtask.image.tag }}
         ports:
         - containerPort: {{ .Values.addtask.ports.containerPort }}
         env: 
         - name: {{ .Values.addtask.env.name }}
-          value: {{ .Values.addtask.env.name }}
+          value: {{ .Values.addtask.env.value }}
