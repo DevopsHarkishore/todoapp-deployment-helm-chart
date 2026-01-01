@@ -1,5 +1,5 @@
 addtask: 
-  replicas: 1
+  replicas: 3
   image:
     acr_name: acrdevtodoproject010.azurecr.io
     image_name:  todo-add-tasks-api
@@ -24,7 +24,7 @@ addtask:
 
 # *******************************************************
 deletetask:
-  replicas: 1
+  replicas: 3
   image:
     acr_name: acrdevtodoproject010.azurecr.io
     image_name:  todo-delete-tasks-api
@@ -49,7 +49,7 @@ deletetask:
     number: 80
 # **************************************************
 gettask:
-  replicas: 2
+  replicas: 3
   image:
     acr_name: acrdevtodoproject010.azurecr.io
     image_name:  todo-get-tasks-api
@@ -73,7 +73,7 @@ gettask:
     number: 80
 # ************************************
 todoui:
-  replicas: 2 
+  replicas: 3
   image:
     acr_name: acrdevtodoproject010.azurecr.io
     image_name: micro-todo-ui-api
