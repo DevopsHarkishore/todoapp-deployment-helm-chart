@@ -65,7 +65,7 @@ gettask:
 
   ingressClassName: azure-application-gateway
   rules:
-    host: togettask.techno028.shop
+    host: todogettask.techno028.shop
   paths:
     pathType: Prefix
     path: "/"
