@@ -6,14 +6,13 @@ addtask:
     tag:  v1
   ports:
     containerPort: 8000
+    port:  80
+    targetPort: 8000
   env:
     name: CONNECTION_STRING
     value:  "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-010.database.windows.net,1433;Database=sqldb-dev-todoproject;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
 
   type: ClusterIP
-  ports:
-    port:  80
-    targetPort: 8000
   ingressClassName: azure-application-gateway
   rules:
     host: todoaddtask.techno028.shop
@@ -31,13 +30,14 @@ deletetask:
     tag:  v1
   ports:
     containerPort: 8000
+    port: 80
+    targetPort: 8000
   env: 
     name: CONNECTION_STRING
     value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-010.database.windows.net,1433;Database=sqldb-dev-todoproject;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   type: ClusterIP
-  ports:
-    port: 80
-    targetPort: 8000
+ 
+
   ingressClassName: azure-application-gateway
   rules:
     host: tododeletetask.techno028.shop
@@ -55,13 +55,13 @@ gettask:
     tag:  v1
   ports:
     containerPort: 8000
+    port: 80
+    targetPort: 8000
   env: 
     name: CONNECTION_STRING
     value: "Driver={ODBC Driver 18 for SQL Server};Server=tcp:sql-dev-todoapp-010.database.windows.net,1433;Database=sqldb-dev-todoproject;Uid=devopsadmin;Pwd=P@ssw01rd@123;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
   type: ClusterIP
-  ports:
-    port: 80
-    targetPort: 8000
+
   ingressClassName: azure-application-gateway
   rules:
     host: togettask.techno028.shop
@@ -77,12 +77,12 @@ todoui:
     acr_name: acrdevtodoproject010.azurecr.io
     image_name: micro-todo-ui-api
     tag: v2
-    ports:
-      containerPort: 80
-  type: ClusterIP
   ports:
+    containerPort: 80
     port: 80
     targetPort: 80
+  type: ClusterIP
+
   ingressClassName: azure-application-gateway
   rules:
     host: todoui.techno028.shop
